@@ -1,0 +1,182 @@
+@import "../../../styles.scss";
+::selection {
+  background-color: $main-color;
+  color: $white-color;
+  -webkit-text-fill-color: $white-color;
+}
+main {
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  margin: 110px auto;
+  .m-custom {
+    margin: 0 85px;
+  }
+  .product-category {
+    background: #f7f0f0;
+    box-shadow: 4px 5px 15px -5px rgba($color: #000000, $alpha: 0.16),
+      0 3px 6px rgba($color: #000000, $alpha: 0.23);
+    .card {
+      a {
+        overflow: hidden;
+        transition: all 0.3s linear;
+        img {
+          transition: all 0.3s linear;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .card-body {
+        top: 105px;
+        .card-title {
+          color: #000;
+        }
+      }
+    }
+  }
+  // title
+  .title {
+    padding: 50px 0;
+    width: 100%;
+    h2 {
+      font: 33px sans-serif;
+      margin-top: 30px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    h2.background {
+      position: relative;
+      z-index: 1;
+      &:before {
+        border-top: 2px solid #dfdfdf;
+        content: "";
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 95%;
+        z-index: -1;
+      }
+      span {
+        background: $white-color;
+        padding: 0 15px;
+      }
+    }
+  }
+
+  //heading
+  .heading {
+    padding-right: 10px;
+    box-shadow: 0 2px 4px rgba(127, 127, 127, 0.3);
+    border-bottom: 2px solid $main-color;
+    margin: 0 100px;
+    .text-heading {
+      background: #f2ba33;
+      color: $white-color;
+      padding: 7px 15px;
+    }
+    .triangle {
+      top: 0;
+      left: 298px;
+      border-bottom: 39px solid $main-color;
+      border-right: 69px solid transparent;
+    }
+    .link-heading {
+      cursor: pointer;
+      i {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .card-custom {
+    transition: 0.3s linear;
+    &:hover {
+      border: 1px solid $main-color;
+    }
+    .card-body {
+      .card-title {
+        font-size: 14px;
+        color: $black-color;
+        transition: 0.2s;
+        &:hover {
+          color: $green-color;
+        }
+      }
+      .card-price {
+        font-size: 23.6px;
+        color: $red-color;
+      }
+    }
+  }
+  .text {
+    a {
+      font-size: 21px;
+      color: $blue-color;
+      border-bottom: 2px solid #333;
+      transition: 0.25s;
+      &:hover {
+        color: #333;
+        border-bottom: 2px solid $blue-color;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .m-custom {
+      margin: 0;
+    }
+    .title h2 {
+      font-size: 24px;
+    }
+    .heading {
+      .text-heading {
+        padding: 7px 8px;
+        font-size: 14px;
+      }
+      .triangle {
+        left: 252px;
+        border-bottom: 36px solid $main-color;
+        border-right: 35px solid transparent;
+      }
+    }
+    .product-category{
+      .card{
+        .card-body{
+          top: 0;
+          .card-title{
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .col-sm-cus {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-sm-cus-4{
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1200px) {
+    .col-sm-cus {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    .product-category{
+      .card{
+        .card-body{
+          top: 0;
+          .card-title{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

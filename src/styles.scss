@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+// *{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+::selection{
+  color: #fff;
+  background: #f2ba33;
+}
+//color
+$main-color: #f2ba33;
+$sub-color: #1a9cb7;
+$white-color: #fff;
+$red-color: #e74728;
+$black-color:#4d4d4d;
+$green-color: #29927d;
+$blue-color: #1e73be;
+$bg-main: #F3F7FD;
+$sub-bg:#e6eefb;
+//border
+$border-015: rgba(112, 112, 112, 0.15);
+$border-05: rgba(112, 112, 112, 0.5);
+
+
+//page contact user
+$drawer-width: 180px;
+$drawer-height: 60px;
+$drawer-color: #2196f3;
+$drawer-open-transition: all cubic-bezier(0.92, -0.15, 0.21, 0.86) 0.25s;
+
+//mixin
+@mixin button3($py, $px, $fz) {
+  button {
+    background: $main-color;
+    color: #fff;
+    text-decoration: none;
+    padding: $py $px;
+    border: none !important;
+    outline: none !important;
+    position: relative;
+    transition: 800ms ease all;
+    font-weight: bold;
+    font-size: $fz;
+  }
+  button:hover {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+  }
+  button:before,
+  button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: $main-color;
+    transition: 400ms ease all;
+  }
+  button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  button:hover:before,
+  button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+}

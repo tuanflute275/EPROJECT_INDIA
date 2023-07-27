@@ -1,0 +1,26 @@
+@import '../styles.scss';
+
+button.scrollToTop {
+  position: fixed;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  color: #fff;
+  height: 40px;
+  text-decoration: none;
+  background: $main-color;
+  border: 1px solid #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 10px;
+  &:hover{
+    opacity: 0.8;
+  }
+}

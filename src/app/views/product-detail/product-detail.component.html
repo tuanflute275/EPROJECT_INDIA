@@ -1,0 +1,173 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 slider">
+        <img class="w-100" src="https://smartdata.tonytemplates.com/electrician-v2/wp-content/uploads/2013/06/prod1.jpg"
+          alt="image">
+      </div>
+      <div class="col-md-6 product-details">
+        <div class="row">
+          <div class="col-md-10">
+            <h2 class="product-title">
+              Woods WiOn 15 amps Receptacle and USB Charger
+            </h2>
+          </div>
+          <div class="col-md-2 text-end">
+            <div class="stock-text">
+              In stock
+            </div>
+          </div>
+        </div>
+        <div class="rating-panel d-flex align-items-center">
+          <div class="rating-star">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <div class="rating-count">
+            ( 100 Review)
+          </div>
+        </div>
+        <div class="product-price mt-4">
+          <span class="price"> {{40 | currency:"USD":"symbol":"0.0"}}</span>
+          <span class="regular-price">{{41.99 | currency:"USD":"symbol":"0.0"}}</span>
+          <span class="sale-percen">{{10 | number}}% off</span>
+        </div>
+        <div class="product-color">
+          <div class="heading">
+            Colors
+          </div>
+          <div class="color">
+            <ul>
+              <li>
+                <a style="background-color: #242424; width: 21px; height: 21px;" routerLink="/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #CD5C5C;" routerLink="/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #6495ED;" routerLink="/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #483D8B;" routerLink="/home/productDetail">+</a>
+              </li>
+              <li>
+                <a style="background-color: #CD5C5C;" routerLink="/home/productDetail">+</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-size row align-items-end">
+          <div class="heading">Size</div>
+          <div class="size">
+            <ul>
+              <li>
+                <a href="" class="active">Xs</a>
+              </li>
+              <li>
+                <a href="">S</a>
+              </li>
+              <li>
+                <a href="">M</a>
+              </li>
+              <li>
+                <a href="">L</a>
+              </li>
+              <li>
+                <a href="">XL</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-quantity">
+          <div class="heading">Quantity</div>
+          <div class="quantity">
+            <button>
+              <i class="fa fa-minus"></i>
+            </button>
+            <input type="number" min="0" value="1">
+            <button>
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="product-btn">
+          <div class="row">
+            <div class="col-7 btn-add">
+              <a routerLink="/cart">
+                <span>
+                  <i class="fa fa-heart"></i>
+                </span>
+                Add to Cart
+              </a>
+            </div>
+            <div class="col-4 btn-wl">
+              <a routerLink="/favorite" class="btn-wishlist">
+                <span>
+                  <i class="fa fa-heart"></i>
+                </span>
+                Wishlist
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-ship">
+          Free Standard Delivery on Purchase above 100$
+        </div>
+      </div>
+      <!-- collsnap -->
+      <div class="row">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <!-- 1 -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  Product Description
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <p>
+                  Specification: <br>
+                  1000 Watt / 10 Amps 240 V AC <br>
+                  Min Setting time: 1 Min <br>
+                  Operating Temperature: -10 to + 40 Deg C <br>
+                  Accourancy: +/-1 Min per month <br>
+                  24 hours / 7 days a week programmable <br>
+                  Built-in battery for backup when power failure <br>
+                  Repeat programs with 16 on/off settings, and setting on/off manually <br>
+                  Battery Backup: Ni-Mh 1.2V 80mAH <br>
+                  Current Cunsumption: 0.015MA <br>
+                  Socket Type: Indian Standard <br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="you-may-like text-center">
+      <div class="heading">
+        Similar Products
+      </div>
+      <div class="row our-blog">
+        <div class="col-md-3" *ngFor="let item of Likes">
+          <div class="card card-blog">
+            <img src="{{item.src}}" alt="image">
+          </div>
+          <div class="title-blog">
+            <a routerLink="/home/cart">
+              {{item.title}}
+            </a>
+            <p class="text-center">{{item.price | currency:"USD":"symbol":"0.0"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

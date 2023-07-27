@@ -1,0 +1,107 @@
+<main>
+  <div class="text-center box-title">
+    <nav class="breadcrumb text-center d-flex justify-content-center bg-white">
+      <a class="breadcrumb-item default" routerLink="/home">Home</a>
+      <span class="breadcrumb-item active">Your Bag</span>
+    </nav>
+    <h3 class="title">INSIDE YOUR BAG</h3>
+    <div class="container">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-12">
+        <div class="cart-product-list">
+          <div class="cart-product-list-heading my-4">Wishlist</div>
+          <div class="cart-product-list-main">
+            <div class="cart-product-list-grid d-flex align-items-center" *ngFor="let item of carts; let i = index">
+              <div class="cart-product-list-image">
+                <img src="{{item.image}}" alt="">
+              </div>
+              <div class="cart-product-list-details">
+                <div class="cart-product-tittle">
+                  <a routerLink="/productDetail">{{item.name}}</a>
+                </div>
+                <div class="cart-product-price">
+                  {{item.price | currency:"USD":"symbol":"0.0"}}
+                </div>
+                <div class="cart-quantity-size d-flex align-items-center mt-3">
+                  <div class="cart-quantiy-outer">
+                    <button class="btn_minus" (click)="handleMinus(i, item.quantity)">
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input (change)="updateQuantity(i, $event)" type="number" min="0" max="99" name="quantity" value="{{item.quantity}}" class="cart-quantity">
+                    <button class="btn_plus" (click)="handlePlus(i, item.quantity)">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="cart-size">M</div>
+                </div>
+                <div class="cart-stock-text">Instock</div>
+              </div>
+              <div class="cart-product-remove-btn">
+                <a (click)="removeCart(i)">
+                  <i class="fa fa-remove"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="cart-promo-code">
+          <form action="">
+            <div class="d-flex justify-content-between">
+              <input type="text" name="" placeholder="Enter Promo Code" >
+              <button type="submit">Apply Code</button>
+            </div>
+          </form>
+        </div>
+        <div class="cart-details">
+          <div class="cart-order-heading">Order Summary</div>
+          <div class="cart-order-summary-des text-center">Shipping & taxes calculated at checkout</div>
+          <div class="cart-line"></div>
+          <div class="cart-detail-list text-center mx-4" *ngFor="let item of carts">
+            <div class="row justify-content-between my-3">
+              <div class="col-6 text-left">
+                <div class="cart-list-text">name:</div>
+              </div>
+              <div class="col-6 text-right">
+                <div class="cart-list-text font-weight-bold">{{item.name}}</div>
+              </div>
+            </div>
+            <div class="row justify-content-between my-3">
+              <div class="col-6 text-left">
+                <div class="cart-list-text">price:</div>
+              </div>
+              <div class="col-6 text-right">
+                <div class="cart-list-text">{{item.price | currency:"USD":"symbol":"0.0"}}</div>
+              </div>
+            </div>
+            <div class="row justify-content-between my-3">
+              <div class="col-6 text-left">
+                <div class="cart-list-text">quantity:</div>
+              </div>
+              <div class="col-6 text-right">
+                <div class="cart-list-text">{{item.quantity}}</div>
+              </div>
+            </div>
+              <div class="row justify-content-between my-3">
+                <div class="col-6 text-left">
+                  <div class="cart-list-text">Total:</div>
+                </div>
+                <div class="col-6 text-right">
+                  <div class="cart-list-text">{{subtotal(item) | currency:"USD":"symbol":"0.0"}}</div>
+                </div>
+              </div>
+              <div class="cart-line"></div>
+          </div>
+          <div class="cart-btn">
+            <a routerLink="/checkout" class="btn1">Proceed To Checkout</a>
+            <a routerLink="/shop" class="btn2">Continue Shipping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

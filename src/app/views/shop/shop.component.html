@@ -1,0 +1,88 @@
+<main>
+  <div class="text-center box-title">
+    <nav class="breadcrumb text-center d-flex justify-content-center bg-white">
+      <a class="breadcrumb-item default" href="/home">Home</a>
+      <span class="breadcrumb-item active">shop</span>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" style="margin-top: 138px;">
+        <div id="search-box">
+          <input type="text" id="search-box__input" [(ngModel)]="userFilter.name" placeholder="Search..">
+          <button type="submit" id="search-box__btn">
+            <i class="cil-search"></i>
+          </button>
+        </div>
+        <div class="row mt-3 sidebar mx-1">
+          <div class="shop-sidebar">
+            <div class="sidebar-heading">
+              <i class="fa-solid fa-filter"></i>
+              Filter
+            </div>
+            <div class="brand mt-3">
+              Brand
+            </div>
+            <div class="row mt-4">
+              <div class="col-6 mb-3 list-brand" *ngFor="let item of brands">
+                <a href="">{{item.name}}</a>
+              </div>
+            </div>
+            <div class="brand mt-3">
+              Price
+            </div>
+            <input type="range" min="1" max="100" name="" id="">
+
+            <div class="button-sidebar mt-4">
+              <div class="row">
+                <div class="col-7">
+                  <button class="button btn-clearFix text-uppercase">
+                    <span>clear filter</span>
+                  </button>
+                </div>
+                <div class="col-5">
+                <button class="button btn-apply text-uppercase">
+                  apply
+                </button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+
+        <h2 class="heading text-center">
+          All products
+        </h2>
+        <div class="row">
+          <div class="col-md-4"
+            *ngFor="let item of products | filterBy: userFilter | paginate:{itemsPerPage: 9, currentPage:page}">
+            <div class="card text-center border-0 position-relative">
+              <div class="show">
+                <div class="hide-cus">
+                  <div class="icon-heart position-absolute">
+                    <a>
+                      <img src="https://mg-fashion.mgtechnologies.co.in/assets/images/heart-icon.svg" alt="">
+                    </a>
+                  </div>
+                  <div class="btn-add position-absolute">
+                    <a>Add To Bag</a>
+                  </div>
+                </div>
+                <a routerLink="/productDetail">
+                  <img class="card-img-top img-product" src="{{item.image}}" alt="image">
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">{{item.price | currency:"USD":"symbol":"0.0"}}</p>
+              </div>
+            </div>
+          </div>
+          <pagination-controls class="text-center mt-3" (pageChange)="page = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

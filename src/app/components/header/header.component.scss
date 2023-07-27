@@ -1,0 +1,79 @@
+@import "../../../styles.scss";
+
+header {
+  margin-bottom: 110px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba($color: #fff, $alpha: 0.9);
+}
+.menu {
+  font-family: "Open Sans Condensed", sans-serif;
+  li {
+    margin: 0 15px;
+  }
+  a {
+    font-size: 20px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    position: relative;
+    padding: 4px 0;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #fff;
+      transition: 0.5s transform ease;
+      transform: scale3d(0, 1, 1);
+      transform-origin: 0 50%;
+      background: #e91e63;
+      transform-origin: 100% 50%;
+    }
+    &:hover::before {
+      transform: scale3d(1, 1, 1);
+      transform-origin: 0 50%;
+    }
+  }
+}
+.header_account {
+  color: #333;
+  ul {
+    li {
+      list-style: none;
+      margin: 0 10px;
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        padding: 4px 10px;
+        i {
+          color: #333;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+.header_heart,
+.header_shopping_cart {
+  position: relative;
+  span.item_count {
+    position: absolute;
+    top: -10px;
+    left: 23px;
+    background: $main-color;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+  }
+}
+

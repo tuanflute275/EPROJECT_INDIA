@@ -1,0 +1,126 @@
+<main>
+  <div class="text-center box-title">
+    <nav class="breadcrumb text-center d-flex justify-content-center bg-white">
+      <a class="breadcrumb-item default" routerLink="/home">Home</a>
+      <span class="breadcrumb-item active">checkout</span>
+    </nav>
+    <h3 class="title">CHECKOUT</h3>
+    <div class="container">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-7 px-5">
+        <form>
+          <div class="checkout-form-heading">Contact Information:</div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="checkout-form-heading">Billing Address:</div>
+          <!--  -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="firstName" class="form-control" placeholder="firstName">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="lastName" class="form-control" placeholder="lastName">
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="Company" placeholder="Company (Optional)">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputCity" placeholder="city name">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" id="state" placeholder="State">
+            </div>
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputZip" placeholder="zip">
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="Phone Number" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Keep this information to next time
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn-payment w-100">Continue To Payment</button>
+        </form>
+      </div>
+      <div class="col-5">
+        <div class="cart-product-list">
+          <div class="cart-product-list-heading my-4">List Of Products</div>
+          <div class="cart-product-list-main">
+            <div class="cart-product-list-grid d-flex justify-content-between align-items-center" *ngFor="let item of carts">
+                <div class="d-flex">
+                  <div class="cart-product-list-image">
+                    <img src="{{item.image}}" alt="">
+                  </div>
+                  <div class="cart-product-list-details">
+                    <div class="cart-product-tittle">
+                      <a>{{item.name}}</a>
+                    </div>
+                    <div class="cart-product-price">
+                      {{item.price | currency:"USD":"symbol":"0.0"}}
+                    </div>
+                  </div>
+                </div>
+              <div class="">
+                <div class="right-order text-end">
+                  <div>
+                    Price:
+                    <span>{{item.price | currency:"USD":"symbol":"0.0"}}</span>
+                  </div>
+                  <div>
+                    quantity:
+                    <span>{{item.quantity}}</span>
+                  </div>
+                  <div>
+                    Discount:
+                    <span>15%</span>
+                  </div>
+                  <div class="grand-total">Grand Total: {{subtotal(item) | currency:"USD":"symbol":"0.0"}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Order Summary -->
+        <div class="cart-details">
+          <div class="cart-order-heading">Order Summary</div>
+          <div class="cart-order-summary-des text-center">Shipping & taxes calculated at checkout</div>
+          <div class="cart-line"></div>
+          <div class="cart-detail-list text-center mx-4">
+            <div class="row justify-content-between my-3">
+              <div class="col-6 text-left">
+                <div class="cart-list-text">count:</div>
+              </div>
+              <div class="col-6 text-right">
+                <div class="cart-list-text">5</div>
+              </div>
+            </div>
+            <div class="cart-line"></div>
+            <div class="row justify-content-between my-3">
+              <div class="col-6 text-left">
+                <div class="cart-list-text font-weight-bold text-uppercase">Grand Total:</div>
+              </div>
+              <div class="col-6 text-right">
+                <div class="cart-list-text font-weight-bold">{{119.97 | currency:"USD":"symbol":"0.0"}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-btn">
+            <button class="btn1" (click)="pay()">Pay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

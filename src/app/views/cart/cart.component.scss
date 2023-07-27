@@ -1,0 +1,173 @@
+@import "../../../styles.scss";
+
+main {
+  margin-top: 110px;
+  .box-title {
+    padding: 80px 0;
+    .default {
+      text-decoration: none;
+      color: #999999;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .title {
+      font-size: 35px;
+    }
+  }
+  //wishlist
+  .cart-product-list {
+    .cart-product-list-main {
+      .cart-product-list-grid {
+        position: relative;
+        padding: 20px 0;
+        border-top: 1px dashed $border-05;
+        .cart-product-list-image {
+          margin-right: 20px;
+          img {
+            width: 100px;
+            height: 132px;
+            object-fit: cover;
+          }
+        }
+        .cart-product-list-details {
+          margin-top: 10px;
+          font-size: 15px;
+          .cart-product-tittle {
+            a {
+              text-decoration: none;
+              color: #000;
+            }
+          }
+          .cart-product-price {
+            margin-top: 10px;
+          }
+          .cart-quantity-size {
+            .cart-size {
+              border: 1px solid $border-015;
+              width: 26px;
+              text-align: center;
+              padding: 3px;
+            }
+            .cart-quantiy-outer {
+              border: 1px solid $border-015;
+              margin-right: 10px;
+              padding: 3px 6px;
+              .btn_minus {
+                margin-right: 15px;
+              }
+              .btn_minus,
+              .btn_plus {
+                border: none;
+                outline: none;
+                background: transparent;
+              }
+              input {
+                width: 50px;
+                text-align: center;
+                border: none;
+                outline: none;
+                background: transparent;
+              }
+            }
+          }
+          .cart-stock-text {
+            font-size: 14px;
+            color: rgba(0, 218, 93, 0.8);
+            margin-top: 10px;
+          }
+        }
+        .cart-product-remove-btn {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          a {
+            background: #f0f0f0;
+            text-align: center;
+            color: #212121;
+            &:hover {
+              color: $main-color;
+            }
+            i {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cart-promo-code {
+    form {
+      border: 1px solid $border-015;
+      input {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        background: #fff;
+      }
+      @include button3($py: 5px, $px: 10px, $fz: 16px);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .cart-promo-code {
+      margin-top: 40px;
+    }
+  }
+  .cart-details {
+    margin-top: 20px;
+    background: #f9f9f9;
+    .cart-order-heading {
+      text-align: center;
+      text-transform: capitalize;
+      color: #000;
+      padding: 16px 0;
+      font-size: 20px;
+    }
+    .cart-order-summary-des {
+      text-align: center;
+      font-size: 15px;
+      padding-bottom: 10px;
+    }
+    .cart-line {
+      border-top: 1px solid $border-015;
+      margin: 15px;
+    }
+    .cart-btn {
+      display: flex;
+      flex-direction: column;
+      margin: 60px 0;
+      a.btn1 {
+        text-decoration: none;
+        cursor: pointer;
+        color: #fff;
+        padding: 10px 15px;
+        text-align: center;
+        margin-bottom: 10px;
+        background: $main-color;
+        transition: 0.4s ease all;
+        &:hover,
+        &.active {
+          background: #000;
+          color: #fff;
+        }
+      }
+      a.btn2 {
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+        padding: 10px 15px;
+        background: #000;
+        transition: 0.4s ease all;
+        &:hover,
+        &.active {
+          background: $main-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+<main>
+  <div class="container-fluid product-category">
+    <div class="row m-custom">
+      <div class="col-lg-2 col-sm-cus-4 my-3" *ngFor="let item of categories">
+        <div class="card text-center border-0 position-relative">
+          <a routerLink="/shop">
+            <img class="card-img-top" src="{{item.image}}" alt="image">
+          </a>
+          <div class="card-body position-absolute">
+            <h5 class="card-title text-center">{{item.name}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="title"><h2 class="background"><span>genuine equipment</span></h2></div>
+  <div class="container-fluid">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        Industrial electrical equipment
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of devices">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        Aptomat
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of aptomats">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        electric lamp
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of lamp">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        Electric Wire
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of wires">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        electric fan
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of theFans">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-between align-items-center heading m-custom position-relative">
+      <div class="text-heading text-uppercase font-weight-bold bg-warn">
+        <i class="fa-solid fa-house-laptop"></i>
+        electric Switch
+      </div>
+      <!-- <div class="triangle position-absolute"></div> -->
+      <a routerLink="" class="link-heading">
+        Xem thêm
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+    <div class="row justify-content-between m-custom mt-3">
+      <div class="col-md-2 col-sm-cus mb-3" *ngFor="let item of switchs">
+        <div class="card card-custom ">
+          <a routerLink="/productDetail"> <img class="card-img-top" src="{{item.image}}" alt="image"></a>
+          <div class="card-body mb-0 pb-0">
+            <a routerLink="/productDetail" class="card-title">{{item.name}}</a>
+            <p class="card-price font-weight-normal mt-3">{{item.price | currency:"USD"}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="title"><h2 class="background"><span>electrical equipment consulting</span></h2></div>
+  <div class="container-fluid">
+    <div class="row m-cus">
+      <div class="col-md-4 mt-3" *ngFor="let item of blogs">
+        <div class="card border-0 text-center">
+          <img class="card-img-top" style="height: 271px; object-fit: cover;" src="{{item.image}}" alt="image">
+          <div class="card-body">
+            <h4 class="card-title" style="font-size: 21px;">{{item.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="text text-center">
+  <a routerLink="/faq">Read More</a>
+</div>
+</main>

@@ -1,0 +1,56 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-light px-4 py-2 d-flex align-items-center">
+    <a class="navbar-brand" routerLink="/home">
+      <img [src]="logo" alt="">
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav m-auto mt-2 py-4 mt-lg-0 menu">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/shop">Shop <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/faq">FAQ <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/about">About <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/contact">Contact <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <div class="header_account">
+        <ul class="d-flex align-items-center m-0">
+          <li class="header_search">
+            <a (click)="search()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </li>
+          <li class="header_heart">
+            <a routerLink="/favorite">
+              <i class="far fa-heart"></i>
+            </a>
+            <span class="item_count">6</span>
+          </li>
+          <li class="header_shopping_cart">
+            <a routerLink="/cart">
+              <i class="cil-cart font-weight-bold" style="color: #171717;"></i>
+            </a>
+            <span class="item_count">9</span>
+          </li>
+          <li>
+            <a >
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
